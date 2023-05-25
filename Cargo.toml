@@ -1,6 +1,6 @@
 [package]
 name = "compute-univ3-address"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Yuichiro Aoki"]
 description = "Compute Uniswap V3 address"
@@ -8,4 +8,4 @@ description = "Compute Uniswap V3 address"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-ethers = "1.0.2"
+ethers = "2.0.4"
