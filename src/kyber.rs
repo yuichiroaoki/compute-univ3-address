@@ -6,9 +6,9 @@ use ethers::{
 };
 use std::str::FromStr;
 
-const FACTORY_ADDRESS: &str = "0x5F1dddbf348aC2fbe22a163e30F99F9ECE3DD50a";
+const FACTORY_ADDRESS: &str = "0xC7a590291e07B9fe9E64b86c58fD8fC764308C4A";
 const POOL_INIT_CODE_HASH: &str =
-    "0xc597aba1bb02db42ba24a8878837965718c032f8b46be94a6e46452a9f89ca01";
+    "0x00e263aaa3a2c06a89b53217a9e7aad7e15613490a72e0f95f303c4de2dc7045";
 
 pub fn get_pool_address(token_a: Address, token_b: Address, fee: u32) -> Address {
     let (token0, token1) = sort_tokens(token_a, token_b);
@@ -30,11 +30,11 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_get_univ3_address_usdc_weth() {
-        let token_a = Address::from_str("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2").unwrap();
-        let token_b = Address::from_str("0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0").unwrap();
+    fn test_get_univ3_address_usdc_dai() {
+        let token_a = Address::from_str("0x7F5c764cBc14f9669B88837ca1490cCa17c31607").unwrap();
+        let token_b = Address::from_str("0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1").unwrap();
         let fee = 8;
-        let expected = Address::from_str("0xebfe63ba0264ad639b3c41d2bfe1ad708f683bc8").unwrap();
+        let expected = Address::from_str("0x80d39502FC199A5094cf231413F5c20D9ee244c4").unwrap();
         let actual = get_pool_address(token_a, token_b, fee);
         assert_eq!(expected, actual);
         let actual = get_pool_address(token_b, token_a, fee);
